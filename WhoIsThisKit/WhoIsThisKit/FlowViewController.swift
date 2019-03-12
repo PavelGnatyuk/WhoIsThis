@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import TheTheme
 import TheTool
 
 public class FlowViewController: UIViewController {
     
+    lazy var theme: Theme = StandardTheme()
+
     lazy var viewControllerFactory: ViewControllerFactoring = {
-        return ViewControllerFactory()
+        return ViewControllerFactory(theme: theme)
     }()
     
     lazy var tabBar: UITabBarController = {
@@ -23,7 +26,7 @@ public class FlowViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = .yellow
+        view.backgroundColor = theme.main.backgroundColor
     
         // Function `add` is located in a `UIViewController` extension from the TheTool static library.
         add(child: tabBar)

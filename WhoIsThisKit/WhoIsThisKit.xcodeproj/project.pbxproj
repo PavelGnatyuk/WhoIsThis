@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF89C17F2237E19300C24014 /* TheTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89C17E2237E19300C24014 /* TheTheme.framework */; };
 		AFBCD42A22377F7F0014E4EA /* WhoIsThisKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBCD42022377F7F0014E4EA /* WhoIsThisKit.framework */; };
 		AFBCD42F22377F7F0014E4EA /* WhoIsThisKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD42E22377F7F0014E4EA /* WhoIsThisKitTests.swift */; };
 		AFBCD43122377F7F0014E4EA /* WhoIsThisKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AFBCD42322377F7F0014E4EA /* WhoIsThisKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF89C17E2237E19300C24014 /* TheTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TheTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD42022377F7F0014E4EA /* WhoIsThisKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhoIsThisKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD42322377F7F0014E4EA /* WhoIsThisKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoIsThisKit.h; sourceTree = "<group>"; };
 		AFBCD42422377F7F0014E4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF89C17F2237E19300C24014 /* TheTheme.framework in Frameworks */,
 				AFBCD44C223783190014E4EA /* libTheTool.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,7 @@
 		AFBCD44A223783190014E4EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF89C17E2237E19300C24014 /* TheTheme.framework */,
 				AFBCD44B223783190014E4EA /* libTheTool.a */,
 			);
 			name = Frameworks;

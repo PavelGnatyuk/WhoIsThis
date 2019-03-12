@@ -1,3 +1,6 @@
 [submodule "TheTool"]
 	path = TheTool
 	url = git@github.com:PavelGnatyuk/TheTool.git
+[submodule "TheTheme"]
+	path = TheTheme
+	url = git@github.com:PavelGnatyuk/TheTheme.git

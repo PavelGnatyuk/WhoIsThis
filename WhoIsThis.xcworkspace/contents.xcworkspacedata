@@ -15,6 +15,9 @@
       location = "group:WhoIsThisKit/WhoIsThisKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:TheTheme/TheTheme/TheTheme.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TheTool/TheTool/TheTool.xcodeproj">
    </FileRef>
 </Workspace>

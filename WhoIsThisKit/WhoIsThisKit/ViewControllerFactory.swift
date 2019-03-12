@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import TheTheme
 
 struct ViewControllerFactory: ViewControllerFactoring {
+    let theme: Theme
+    
+    init(theme: Theme) {
+        self.theme = theme
+    }
+    
     func makeTabBarController() -> UITabBarController {
         let controller = UITabBarController()
         let callers = makeCallersNavController()

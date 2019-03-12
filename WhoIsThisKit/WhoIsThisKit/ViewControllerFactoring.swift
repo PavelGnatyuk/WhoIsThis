@@ -7,8 +7,12 @@
 //
 
 import UIKit.UIViewController
+import TheTheme
 
 protocol ViewControllerFactoring {
+
+    var theme: Theme { get }
+
     func makeTabBarController() -> UITabBarController
     func makeSettingsViewController() -> SettingsViewController
     func makeCallersViewController() -> CallersViewController
