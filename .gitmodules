@@ -1,0 +1,3 @@
+[submodule "TheTool"]
+	path = TheTool
+	url = git@github.com:PavelGnatyuk/TheTool.git
