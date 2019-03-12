@@ -9,9 +9,12 @@
       </FileRef>
    </Group>
    <FileRef
+      location = "group:WhoIsThis/WhoIsThis.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WhoIsThisKit/WhoIsThisKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:WhoIsThis/WhoIsThis.xcodeproj">
+      location = "group:TheTool/TheTool/TheTool.xcodeproj">
    </FileRef>
 </Workspace>
