@@ -9,7 +9,29 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    let viewModel: SettingsViewModel
+    
+    lazy var settingsView: SettingsView = {
+        let view = SettingsView()
+        return view
+    }()
 
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        title = viewModel.title
+    }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
+    override func loadView() {
+        view = settingsView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0DD854223D12EA00AB5880 /* CallersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0DD853223D12EA00AB5880 /* CallersView.swift */; };
+		AF0DD856223D13C900AB5880 /* CallersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0DD855223D13C900AB5880 /* CallersViewModel.swift */; };
+		AF0DD859223D155500AB5880 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0DD858223D155500AB5880 /* SettingsViewModel.swift */; };
+		AF0DD85D223D159100AB5880 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0DD85C223D159100AB5880 /* SettingsView.swift */; };
 		AF89C17F2237E19300C24014 /* TheTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89C17E2237E19300C24014 /* TheTheme.framework */; };
 		AFBCD42A22377F7F0014E4EA /* WhoIsThisKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBCD42022377F7F0014E4EA /* WhoIsThisKit.framework */; };
 		AFBCD42F22377F7F0014E4EA /* WhoIsThisKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD42E22377F7F0014E4EA /* WhoIsThisKitTests.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0DD853223D12EA00AB5880 /* CallersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallersView.swift; sourceTree = "<group>"; };
+		AF0DD855223D13C900AB5880 /* CallersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallersViewModel.swift; sourceTree = "<group>"; };
+		AF0DD858223D155500AB5880 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AF0DD85C223D159100AB5880 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AF89C17E2237E19300C24014 /* TheTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TheTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD42022377F7F0014E4EA /* WhoIsThisKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhoIsThisKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD42322377F7F0014E4EA /* WhoIsThisKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhoIsThisKit.h; sourceTree = "<group>"; };
@@ -66,6 +74,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF0DD851223D111600AB5880 /* Callers View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCD4582237AE940014E4EA /* CallersViewController.swift */,
+				AF0DD855223D13C900AB5880 /* CallersViewModel.swift */,
+				AF0DD853223D12EA00AB5880 /* CallersView.swift */,
+			);
+			name = "Callers View Controller";
+			sourceTree = "<group>";
+		};
+		AF0DD852223D113D00AB5880 /* View Controller Factory */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCD45222379DB70014E4EA /* ViewControllerFactoring.swift */,
+				AFBCD45422379E990014E4EA /* ViewControllerFactory.swift */,
+			);
+			name = "View Controller Factory";
+			sourceTree = "<group>";
+		};
+		AF0DD857223D153000AB5880 /* Settings View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFBCD4562237AE6D0014E4EA /* SettingsViewController.swift */,
+				AF0DD85C223D159100AB5880 /* SettingsView.swift */,
+				AF0DD858223D155500AB5880 /* SettingsViewModel.swift */,
+			);
+			name = "Settings View Controller";
+			sourceTree = "<group>";
+		};
 		AFBCD41622377F7F0014E4EA = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +153,10 @@
 		AFBCD45122379CEE0014E4EA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF0DD857223D153000AB5880 /* Settings View Controller */,
+				AF0DD852223D113D00AB5880 /* View Controller Factory */,
+				AF0DD851223D111600AB5880 /* Callers View Controller */,
 				AFBCD44D223788DA0014E4EA /* FlowViewController.swift */,
-				AFBCD45222379DB70014E4EA /* ViewControllerFactoring.swift */,
-				AFBCD45422379E990014E4EA /* ViewControllerFactory.swift */,
-				AFBCD4562237AE6D0014E4EA /* SettingsViewController.swift */,
-				AFBCD4582237AE940014E4EA /* CallersViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -237,8 +273,12 @@
 				AFBCD45522379E990014E4EA /* ViewControllerFactory.swift in Sources */,
 				AFBCD44E223788DA0014E4EA /* FlowViewController.swift in Sources */,
 				AFBCD45322379DB70014E4EA /* ViewControllerFactoring.swift in Sources */,
+				AF0DD85D223D159100AB5880 /* SettingsView.swift in Sources */,
 				AFBCD4572237AE6D0014E4EA /* SettingsViewController.swift in Sources */,
 				AFBCD4592237AE940014E4EA /* CallersViewController.swift in Sources */,
+				AF0DD854223D12EA00AB5880 /* CallersView.swift in Sources */,
+				AF0DD856223D13C900AB5880 /* CallersViewModel.swift in Sources */,
+				AF0DD859223D155500AB5880 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,17 +25,19 @@ struct ViewControllerFactory: ViewControllerFactoring {
     }
     
     func makeSettingsViewController() -> SettingsViewController {
-        let controller = SettingsViewController()
+        let viewModel = SettingsViewModel()
+        let controller = SettingsViewController(viewModel: viewModel)
         return controller
     }
     
     func makeCallersViewController() -> CallersViewController {
-        let controller = CallersViewController()
+        let viewModel = CallersViewModel()
+        let controller = CallersViewController(viewModel: viewModel)
         return controller
     }
 
     func makeSettingsNavController() -> UINavigationController {
-        let controller = SettingsViewController()
+        let controller = makeSettingsViewController()
         let navController = UINavigationController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: .tabBarItemSettings, image: nil, selectedImage: nil)
         navController.navigationBar.prefersLargeTitles = true
@@ -43,7 +45,7 @@ struct ViewControllerFactory: ViewControllerFactoring {
     }
     
     func makeCallersNavController() -> UINavigationController {
-        let controller = CallersViewController()
+        let controller = makeCallersViewController()
         let navController = UINavigationController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: .tabBarItemCallers, image: nil, selectedImage: nil)
         navController.navigationBar.prefersLargeTitles = true

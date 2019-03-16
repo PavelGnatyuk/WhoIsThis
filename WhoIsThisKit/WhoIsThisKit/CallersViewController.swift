@@ -9,7 +9,29 @@
 import UIKit
 
 class CallersViewController: UIViewController {
+    
+    let viewModel: CallersViewModel
+    
+    lazy var callersView: CallersView = {
+        let view = CallersView()
+        return view
+    }()
+    
+    init(viewModel: CallersViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        title = viewModel.title
+    }
 
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
+    
+    override func loadView() {
+        view = callersView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
