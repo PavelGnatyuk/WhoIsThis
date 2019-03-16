@@ -21,6 +21,7 @@
 		AFBCD45522379E990014E4EA /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD45422379E990014E4EA /* ViewControllerFactory.swift */; };
 		AFBCD4572237AE6D0014E4EA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD4562237AE6D0014E4EA /* SettingsViewController.swift */; };
 		AFBCD4592237AE940014E4EA /* CallersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD4582237AE940014E4EA /* CallersViewController.swift */; };
+		AFFA718A223D1E3E007D59A1 /* WhoIsThisDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFFA7189223D1E3E007D59A1 /* WhoIsThisDB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AFBCD45422379E990014E4EA /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		AFBCD4562237AE6D0014E4EA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AFBCD4582237AE940014E4EA /* CallersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallersViewController.swift; sourceTree = "<group>"; };
+		AFFA7189223D1E3E007D59A1 /* WhoIsThisDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WhoIsThisDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFFA718A223D1E3E007D59A1 /* WhoIsThisDB.framework in Frameworks */,
 				AF89C17F2237E19300C24014 /* TheTheme.framework in Frameworks */,
 				AFBCD44C223783190014E4EA /* libTheTool.a in Frameworks */,
 			);
@@ -144,6 +147,7 @@
 		AFBCD44A223783190014E4EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFFA7189223D1E3E007D59A1 /* WhoIsThisDB.framework */,
 				AF89C17E2237E19300C24014 /* TheTheme.framework */,
 				AFBCD44B223783190014E4EA /* libTheTool.a */,
 			);
@@ -353,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -411,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

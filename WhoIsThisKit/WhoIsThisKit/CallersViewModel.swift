@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import WhoIsThisDB
 
 struct CallersViewModel {
     let title: String = .callersViewControllerTitle
+    
+    let callers = CallerCollection()
 }
 
 fileprivate extension String {
