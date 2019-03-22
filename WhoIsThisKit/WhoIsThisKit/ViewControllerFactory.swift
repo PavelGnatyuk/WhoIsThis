@@ -10,6 +10,7 @@ import UIKit
 import TheTheme
 
 struct ViewControllerFactory: ViewControllerFactoring {
+    
     let theme: Theme
     
     init(theme: Theme) {
@@ -33,13 +34,14 @@ struct ViewControllerFactory: ViewControllerFactoring {
     
     func makeIdentifyViewController() -> IdentifyViewController {
         let viewModel = IdentifyViewModel()
-        let controller = IdentifyViewController(viewModel: viewModel)
+        let controller = IdentifyViewController(theme: theme, viewModel: viewModel, viewControllerFactory: self)
         return controller
     }
     
     func makeBlockViewController() -> BlockViewController {
-        let viewModel = BlockViewModel()
-        let controller = BlockViewController(viewModel: viewModel)
+        let callers = CallerLoader().load()
+        let viewModel = BlockViewModel(callers: callers)
+        let controller = BlockViewController(theme: theme, viewModel: viewModel, viewControllerFactory: self)
         return controller
     }
     
@@ -64,6 +66,11 @@ struct ViewControllerFactory: ViewControllerFactoring {
         return navController
     }
 
+    func makeCallerTableViewController() -> CallersTableViewController {
+        let dataSource = CallerTableViewDataSource()
+        let controller = CallersTableViewController(dataSource: dataSource)
+        return controller
+    }
 }
 
 fileprivate extension ViewControllerFactory {

@@ -11,16 +11,24 @@ import Foundation
 public struct CallerCollection {
     private var collection = [Caller]()
     
+    public var count: Int {
+        return collection.count
+    }
+    
     public init() {
         
     }
     
-    subscript(index: Int) -> Caller {
+    public subscript(index: Int) -> Caller {
         get {
             return collection[index]
         }
         set {
             collection[index] = newValue
         }
+    }
+    
+    public mutating func add(caller: Caller) {
+        collection.append(caller)
     }
 }

@@ -7,13 +7,33 @@
 //
 
 import UIKit
+import TheTheme
 
 class IdentifyViewController: UIViewController {
 
     let viewModel: IdentifyViewModel
+    let theme: Theme
+    let viewControllerFactory: ViewControllerFactoring
+
+    lazy var tableViewController: CallersTableViewController = {
+        let controller = viewControllerFactory.makeCallerTableViewController()
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        return controller
+    }()
     
-    init(viewModel: IdentifyViewModel) {
+    var tableViewConstraints: [NSLayoutConstraint] {
+        return [
+            tableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            tableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ]
+    }
+
+    init(theme: Theme, viewModel: IdentifyViewModel, viewControllerFactory: ViewControllerFactoring) {
+        self.theme = theme
         self.viewModel = viewModel
+        self.viewControllerFactory = viewControllerFactory
         super.init(nibName: nil, bundle: nil)
         title = viewModel.title
     }
@@ -25,6 +45,7 @@ class IdentifyViewController: UIViewController {
     
     lazy var identifyView: IdentifyView = {
         let view = IdentifyView()
+        view.backgroundColor = theme.main.backgroundColor
         return view
     }()
 
@@ -34,5 +55,7 @@ class IdentifyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        add(child: tableViewController)
+        NSLayoutConstraint.activate(tableViewConstraints)
     }
 }

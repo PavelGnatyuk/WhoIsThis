@@ -9,6 +9,11 @@
 import Foundation
 
 public struct Caller {
-    var name: String
-    var phone: String
+    public var identifier: UUID = UUID()
+    public var name: String = ""
+    public var phone: String = ""
+    public var note: String = ""
+    
+    public init() {
+    }
 }

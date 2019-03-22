@@ -14,10 +14,14 @@ protocol ViewControllerFactoring {
     var theme: Theme { get }
 
     func makeTabBarController() -> UITabBarController
+    
     func makeSettingsViewController() -> SettingsViewController
     func makeIdentifyViewController() -> IdentifyViewController
     func makeBlockViewController() -> BlockViewController
+    
     func makeSettingsNavController() -> UINavigationController
     func makeIdentifyNavController() -> UINavigationController
     func makeBlockNavController() -> UINavigationController
+    
+    func makeCallerTableViewController() -> CallersTableViewController
 }

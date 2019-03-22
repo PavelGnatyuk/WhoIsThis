@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import TheTheme
 
 class BlockViewController: UIViewController {
 
     let viewModel: BlockViewModel
+    let theme: Theme
+    let viewControllerFactory: ViewControllerFactoring
     
     lazy var blockView: BlockView = {
         let view = BlockView()
+        view.backgroundColor = theme.main.backgroundColor
         return view
     }()
 
-    init(viewModel: BlockViewModel) {
+    lazy var tableViewController: CallersTableViewController = {
+        let controller = viewControllerFactory.makeCallerTableViewController()
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        return controller
+    }()
+    
+    var tableViewConstraints: [NSLayoutConstraint] {
+        return [
+            tableViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            tableViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableViewController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableViewController.view.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ]
+    }
+    
+    init(theme: Theme, viewModel: BlockViewModel, viewControllerFactory: ViewControllerFactoring) {
+        self.theme = theme
         self.viewModel = viewModel
+        self.viewControllerFactory = viewControllerFactory
         super.init(nibName: nil, bundle: nil)
         title = viewModel.title
     }
@@ -34,6 +55,9 @@ class BlockViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        add(child: tableViewController)
+        NSLayoutConstraint.activate(tableViewConstraints)
     }
 
 }

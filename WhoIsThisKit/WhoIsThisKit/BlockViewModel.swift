@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import WhoIsThisDB
 
 struct BlockViewModel {
     var title: String = .blockViewControllerTitle
+    
+    let collection: CallerCollection
+    
+    init(callers: CallerCollection) {
+        self.collection = callers
+    }
 }
 
 fileprivate extension String {
