@@ -1,14 +1,14 @@
 //
-//  CallersView.swift
+//  IdentifyView.swift
 //  WhoIsThisKit
 //
-//  Created by Pavel Gnatyuk on 16/03/2019.
+//  Created by Pavel Gnatyuk on 22/03/2019.
 //  Copyright © 2019 Pavel Gnatyuk. All rights reserved.
 //
 
 import UIKit
 
-class CallersView: UIView {
+class IdentifyView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

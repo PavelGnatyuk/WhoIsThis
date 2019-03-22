@@ -15,7 +15,9 @@ protocol ViewControllerFactoring {
 
     func makeTabBarController() -> UITabBarController
     func makeSettingsViewController() -> SettingsViewController
-    func makeCallersViewController() -> CallersViewController
+    func makeIdentifyViewController() -> IdentifyViewController
+    func makeBlockViewController() -> BlockViewController
     func makeSettingsNavController() -> UINavigationController
-    func makeCallersNavController() -> UINavigationController
+    func makeIdentifyNavController() -> UINavigationController
+    func makeBlockNavController() -> UINavigationController
 }

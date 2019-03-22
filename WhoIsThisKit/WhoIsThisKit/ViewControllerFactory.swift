@@ -18,9 +18,10 @@ struct ViewControllerFactory: ViewControllerFactoring {
     
     func makeTabBarController() -> UITabBarController {
         let controller = UITabBarController()
-        let callers = makeCallersNavController()
+        let identify = makeIdentifyNavController()
+        let block = makeBlockNavController()
         let settings = makeSettingsNavController()
-        controller.setViewControllers([callers, settings], animated: false)
+        controller.setViewControllers([block, identify, settings], animated: false)
         return controller
     }
     
@@ -30,30 +31,51 @@ struct ViewControllerFactory: ViewControllerFactoring {
         return controller
     }
     
-    func makeCallersViewController() -> CallersViewController {
-        let viewModel = CallersViewModel()
-        let controller = CallersViewController(viewModel: viewModel)
+    func makeIdentifyViewController() -> IdentifyViewController {
+        let viewModel = IdentifyViewModel()
+        let controller = IdentifyViewController(viewModel: viewModel)
         return controller
     }
-
+    
+    func makeBlockViewController() -> BlockViewController {
+        let viewModel = BlockViewModel()
+        let controller = BlockViewController(viewModel: viewModel)
+        return controller
+    }
+    
     func makeSettingsNavController() -> UINavigationController {
         let controller = makeSettingsViewController()
-        let navController = UINavigationController(rootViewController: controller)
+        let navController = makeNavController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: .tabBarItemSettings, image: nil, selectedImage: nil)
-        navController.navigationBar.prefersLargeTitles = true
         return navController
     }
     
-    func makeCallersNavController() -> UINavigationController {
-        let controller = makeCallersViewController()
-        let navController = UINavigationController(rootViewController: controller)
-        navController.tabBarItem = UITabBarItem(title: .tabBarItemCallers, image: nil, selectedImage: nil)
+    func makeIdentifyNavController() -> UINavigationController {
+        let controller = makeIdentifyViewController()
+        let navController = makeNavController(rootViewController: controller)
+        navController.tabBarItem = UITabBarItem(title: .tabBarItemIdentify, image: nil, selectedImage: nil)
+        return navController
+    }
+
+    func makeBlockNavController() -> UINavigationController {
+        let controller = makeBlockViewController()
+        let navController = makeNavController(rootViewController: controller)
+        navController.tabBarItem = UITabBarItem(title: .tabBarItemBlock, image: nil, selectedImage: nil)
+        return navController
+    }
+
+}
+
+fileprivate extension ViewControllerFactory {
+    func makeNavController(rootViewController: UIViewController) -> UINavigationController {
+        let navController = UINavigationController(rootViewController: rootViewController)
         navController.navigationBar.prefersLargeTitles = true
         return navController
     }
 }
 
 fileprivate extension String {
-    static let tabBarItemCallers = "Callers"
+    static let tabBarItemIdentify = "Identify"
+    static let tabBarItemBlock = "Block"
     static let tabBarItemSettings = "Settings"
 }
