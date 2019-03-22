@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AF82B8FB2245255D0047210B /* WhoIsThisDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF82B8FA2245255D0047210B /* WhoIsThisDB.framework */; };
 		AF82B8FC2245255D0047210B /* WhoIsThisDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF82B8FA2245255D0047210B /* WhoIsThisDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AF85EC14224528D10098BC62 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85EC13224528D10098BC62 /* CallDirectoryHandler.swift */; };
+		AF85EC18224528D10098BC62 /* WhoIsThisDirectory.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF85EC11224528D10098BC62 /* WhoIsThisDirectory.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF89C1842237E6C600C24014 /* TheTheme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF89C1822237E58200C24014 /* TheTheme.framework */; };
 		AF89C1852237E6C600C24014 /* TheTheme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF89C1822237E58200C24014 /* TheTheme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AFBCD38F22377E770014E4EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCD38E22377E770014E4EA /* AppDelegate.swift */; };
@@ -21,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AF85EC16224528D10098BC62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFBCD38322377E770014E4EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF85EC10224528D10098BC62;
+			remoteInfo = WhoIsThisDirectory;
+		};
 		AFBCD3A022377E790014E4EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AFBCD38322377E770014E4EA /* Project object */;
@@ -38,6 +47,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AF85EC1C224528D20098BC62 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF85EC18224528D10098BC62 /* WhoIsThisDirectory.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBCD43D22377F980014E4EA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,6 +76,9 @@
 /* Begin PBXFileReference section */
 		AF82B8F9224525300047210B /* WhoIsThis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhoIsThis.entitlements; sourceTree = "<group>"; };
 		AF82B8FA2245255D0047210B /* WhoIsThisDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WhoIsThisDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF85EC11224528D10098BC62 /* WhoIsThisDirectory.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhoIsThisDirectory.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF85EC13224528D10098BC62 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		AF85EC15224528D10098BC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF89C1822237E58200C24014 /* TheTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TheTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD38B22377E770014E4EA /* WhoIsThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoIsThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBCD38E22377E770014E4EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AF85EC0E224528D10098BC62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBCD38822377E770014E4EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF85EC12224528D10098BC62 /* WhoIsThisDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				AF85EC13224528D10098BC62 /* CallDirectoryHandler.swift */,
+				AF85EC15224528D10098BC62 /* Info.plist */,
+			);
+			path = WhoIsThisDirectory;
+			sourceTree = "<group>";
+		};
 		AF89C1812237E58200C24014 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +154,7 @@
 				AFBCD38D22377E770014E4EA /* WhoIsThis */,
 				AFBCD3A222377E790014E4EA /* WhoIsThisTests */,
 				AFBCD3AD22377E790014E4EA /* WhoIsThisUITests */,
+				AF85EC12224528D10098BC62 /* WhoIsThisDirectory */,
 				AFBCD38C22377E770014E4EA /* Products */,
 				AF89C1812237E58200C24014 /* Frameworks */,
 			);
@@ -126,6 +166,7 @@
 				AFBCD38B22377E770014E4EA /* WhoIsThis.app */,
 				AFBCD39F22377E790014E4EA /* WhoIsThisTests.xctest */,
 				AFBCD3AA22377E790014E4EA /* WhoIsThisUITests.xctest */,
+				AF85EC11224528D10098BC62 /* WhoIsThisDirectory.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +204,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AF85EC10224528D10098BC62 /* WhoIsThisDirectory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF85EC1B224528D20098BC62 /* Build configuration list for PBXNativeTarget "WhoIsThisDirectory" */;
+			buildPhases = (
+				AF85EC0D224528D10098BC62 /* Sources */,
+				AF85EC0E224528D10098BC62 /* Frameworks */,
+				AF85EC0F224528D10098BC62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhoIsThisDirectory;
+			productName = WhoIsThisDirectory;
+			productReference = AF85EC11224528D10098BC62 /* WhoIsThisDirectory.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AFBCD38A22377E770014E4EA /* WhoIsThis */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFBCD3B322377E790014E4EA /* Build configuration list for PBXNativeTarget "WhoIsThis" */;
@@ -171,10 +229,12 @@
 				AFBCD38822377E770014E4EA /* Frameworks */,
 				AFBCD38922377E770014E4EA /* Resources */,
 				AFBCD43D22377F980014E4EA /* Embed Frameworks */,
+				AF85EC1C224528D20098BC62 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AF85EC17224528D10098BC62 /* PBXTargetDependency */,
 			);
 			name = WhoIsThis;
 			productName = WhoIsThis;
@@ -227,6 +287,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Pavel Gnatyuk";
 				TargetAttributes = {
+					AF85EC10224528D10098BC62 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					AFBCD38A22377E770014E4EA = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
@@ -261,11 +324,19 @@
 				AFBCD38A22377E770014E4EA /* WhoIsThis */,
 				AFBCD39E22377E790014E4EA /* WhoIsThisTests */,
 				AFBCD3A922377E790014E4EA /* WhoIsThisUITests */,
+				AF85EC10224528D10098BC62 /* WhoIsThisDirectory */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AF85EC0F224528D10098BC62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBCD38922377E770014E4EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +363,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AF85EC0D224528D10098BC62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF85EC14224528D10098BC62 /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFBCD38722377E770014E4EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +398,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AF85EC17224528D10098BC62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF85EC10224528D10098BC62 /* WhoIsThisDirectory */;
+			targetProxy = AF85EC16224528D10098BC62 /* PBXContainerItemProxy */;
+		};
 		AFBCD3A122377E790014E4EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AFBCD38A22377E770014E4EA /* WhoIsThis */;
@@ -343,6 +427,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AF85EC19224528D20098BC62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 48DVB7QH33;
+				INFOPLIST_FILE = WhoIsThisDirectory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.whoisthis.app.whoisthisdirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "WhoIsThis Directory Dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF85EC1A224528D20098BC62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 48DVB7QH33;
+				INFOPLIST_FILE = WhoIsThisDirectory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.whoisthis.app.whoisthisdirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "WhoIsThis Directory Release";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		AFBCD3B122377E790014E4EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -462,6 +592,7 @@
 		AFBCD3B422377E790014E4EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WhoIsThis/WhoIsThis.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -483,6 +614,7 @@
 		AFBCD3B522377E790014E4EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WhoIsThis/WhoIsThis.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -587,6 +719,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AF85EC1B224528D20098BC62 /* Build configuration list for PBXNativeTarget "WhoIsThisDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF85EC19224528D20098BC62 /* Debug */,
+				AF85EC1A224528D20098BC62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AFBCD38622377E770014E4EA /* Build configuration list for PBXProject "WhoIsThis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
