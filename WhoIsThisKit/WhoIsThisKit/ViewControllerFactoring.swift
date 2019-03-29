@@ -24,4 +24,6 @@ protocol ViewControllerFactoring {
     func makeBlockNavController() -> UINavigationController
     
     func makeCallerTableViewController() -> CallersTableViewController
+    func makeAddCallerToBlockViewController() -> AddCallerViewController
+    func makeAddCallerToIdentifyViewController() -> AddCallerViewController
 }

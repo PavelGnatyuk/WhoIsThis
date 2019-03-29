@@ -71,6 +71,18 @@ struct ViewControllerFactory: ViewControllerFactoring {
         let controller = CallersTableViewController(dataSource: dataSource)
         return controller
     }
+    
+    func makeAddCallerToBlockViewController() -> AddCallerViewController {
+        let viewModel = AddCallerViewModelType.make(type: .blockCaller)
+        let controller = AddCallerViewController(viewModel: viewModel, theme: theme)
+        return controller
+    }
+    
+    func makeAddCallerToIdentifyViewController() -> AddCallerViewController {
+        let viewModel = AddCallerViewModelType.make(type: .identifyCaller)
+        let controller = AddCallerViewController(viewModel: viewModel, theme: theme)
+        return controller
+    }
 }
 
 fileprivate extension ViewControllerFactory {

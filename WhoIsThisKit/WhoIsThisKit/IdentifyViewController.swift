@@ -55,7 +55,19 @@ class IdentifyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBarButton()
         add(child: tableViewController)
         NSLayoutConstraint.activate(tableViewConstraints)
+    }
+}
+
+fileprivate extension IdentifyViewController {
+    func addBarButton() {
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tapOnAddButton(_:)))
+        navigationItem.rightBarButtonItem = add
+    }
+    
+    @objc func tapOnAddButton(_ sender: AnyObject) {
+        
     }
 }
