@@ -41,7 +41,6 @@ class BlockViewController: UIViewController {
         self.viewModel = viewModel
         self.viewControllerFactory = viewControllerFactory
         super.init(nibName: nil, bundle: nil)
-        title = viewModel.title
     }
     
     @available(*, unavailable)
@@ -60,6 +59,10 @@ class BlockViewController: UIViewController {
         NSLayoutConstraint.activate(tableViewConstraints)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = viewModel.title
+    }
 }
 
 fileprivate extension BlockViewController {

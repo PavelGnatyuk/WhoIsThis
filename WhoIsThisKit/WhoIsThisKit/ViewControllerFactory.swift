@@ -68,7 +68,7 @@ struct ViewControllerFactory: ViewControllerFactoring {
 
     func makeCallerTableViewController() -> CallersTableViewController {
         let dataSource = CallerTableViewDataSource()
-        let controller = CallersTableViewController(dataSource: dataSource)
+        let controller = CallersTableViewController(theme: theme, dataSource: dataSource)
         return controller
     }
     
