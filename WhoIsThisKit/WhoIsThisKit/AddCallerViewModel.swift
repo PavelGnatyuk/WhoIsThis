@@ -40,6 +40,6 @@ struct AddCallerViewModel {
 }
 
 extension String {
-    static let addCallerToBlockViewControllerTitle = "Add a caller to block"
-    static let addCallerToIdentifyViewControllerTitle = "Add a caller to identify"
+    static let addCallerToBlockViewControllerTitle = "Block caller"
+    static let addCallerToIdentifyViewControllerTitle = "Identify caller"
 }

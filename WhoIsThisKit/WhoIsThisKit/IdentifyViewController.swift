@@ -68,6 +68,7 @@ fileprivate extension IdentifyViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        
+        let controller = viewControllerFactory.makeAddCallerToIdentifyViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

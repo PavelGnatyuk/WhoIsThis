@@ -69,6 +69,7 @@ fileprivate extension BlockViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        
+        let controller = viewControllerFactory.makeAddCallerToBlockViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

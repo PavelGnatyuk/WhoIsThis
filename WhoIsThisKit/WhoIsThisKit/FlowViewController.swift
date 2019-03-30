@@ -12,7 +12,13 @@ import TheTool
 
 public class FlowViewController: UIViewController {
     
-    lazy var theme: Theme = StandardTheme()
+    let application: UIApplication
+    
+    public lazy var theme: Theme = {
+        let theme = StandardTheme()
+        theme.apply(for: application)
+        return theme
+    }()
 
     lazy var viewControllerFactory: ViewControllerFactoring = {
         return ViewControllerFactory(theme: theme)
@@ -21,6 +27,16 @@ public class FlowViewController: UIViewController {
     lazy var tabBar: UITabBarController = {
         return viewControllerFactory.makeTabBarController()
     }()
+    
+    public init(application: UIApplication) {
+        self.application = application
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +48,4 @@ public class FlowViewController: UIViewController {
         add(child: tabBar)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

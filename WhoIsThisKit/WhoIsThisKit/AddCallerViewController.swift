@@ -41,6 +41,10 @@ class AddCallerViewController: UIViewController {
         addBarButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = viewModel.title
+    }
 }
 
 fileprivate extension AddCallerViewController {
