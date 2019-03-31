@@ -16,6 +16,7 @@ class CallerTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: CallerTableViewCell.reuseIdentifier)
+        cell.backgroundColor = .clear
         cell.textLabel?.text = "Caller"
         return cell
     }
