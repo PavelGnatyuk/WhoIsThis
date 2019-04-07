@@ -21,7 +21,9 @@ public class FlowViewController: UIViewController {
     }()
 
     lazy var viewControllerFactory: ViewControllerFactoring = {
-        return ViewControllerFactory(theme: theme)
+        var factory = ViewControllerFactory(theme: theme)
+        factory.coordinator = self
+        return factory
     }()
     
     lazy var tabBar: UITabBarController = {
@@ -48,4 +50,19 @@ public class FlowViewController: UIViewController {
         add(child: tabBar)
     }
     
+}
+
+extension FlowViewController: IdentifyViewControllerDelegate, BlockViewControllerDelegate {
+    func onAdd(viewController: UIViewController) {
+        let controller = viewControllerFactory.makeAddCallerToIdentifyViewController()
+        controller.delegate = self
+        viewController.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+}
+
+extension FlowViewController: AddCallerViewControllerDelegate {
+    func onClose(viewController: UIViewController, modified: Bool) {
+        viewController.navigationController?.popViewController(animated: true)
+    }
 }

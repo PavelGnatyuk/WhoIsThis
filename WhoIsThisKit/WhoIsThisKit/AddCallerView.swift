@@ -11,7 +11,7 @@ import TheTheme
 
 class AddCallerView: UIView {
 
-    lazy var labelName: UILabel = {
+    lazy var labelName: ThemedLabel = {
         let label = ThemedLabel()
         label.text = "Name:"
         return label
@@ -26,7 +26,7 @@ class AddCallerView: UIView {
         ]
     }
     
-    lazy var textFieldName: UITextField = {
+    lazy var textFieldName: ThemedTextField = {
         let textField = ThemedTextField()
         textField.placeholder = "Name"
         return textField
@@ -41,7 +41,7 @@ class AddCallerView: UIView {
         ]
     }
 
-    lazy var labelPhone: UILabel = {
+    lazy var labelPhone: ThemedLabel = {
         let label = ThemedLabel()
         label.text = "Phone:"
         return label
@@ -56,7 +56,7 @@ class AddCallerView: UIView {
         ]
     }
 
-    lazy var textFieldPhone: UITextField = {
+    lazy var textFieldPhone: ThemedTextField = {
         let textField = ThemedTextField()
         textField.placeholder = "Phone"
         return textField
@@ -71,7 +71,7 @@ class AddCallerView: UIView {
         ]
     }
 
-    lazy var labelNote: UILabel = {
+    lazy var labelNote: ThemedLabel = {
         let label = ThemedLabel()
         label.text = "Note:"
         return label
@@ -86,7 +86,7 @@ class AddCallerView: UIView {
         ]
     }
     
-    lazy var textViewNote: UITextView = {
+    lazy var textViewNote: ThemedTextView = {
         let textView = ThemedTextView()
         return textView
     }()

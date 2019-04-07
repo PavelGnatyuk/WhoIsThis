@@ -20,6 +20,7 @@ class CallersTableViewController: UIViewController {
         table.delegate = self
         table.dataSource = dataSource
         table.backgroundColor = theme.tableView.backgroundColor
+        table.tableFooterView = UIView()
         table.register(CallerTableViewCell.self, forCellReuseIdentifier: CallerTableViewCell.reuseIdentifier)
         return table
     }()

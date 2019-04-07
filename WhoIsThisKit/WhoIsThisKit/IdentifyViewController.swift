@@ -9,11 +9,17 @@
 import UIKit
 import TheTheme
 
+protocol IdentifyViewControllerDelegate: class {
+    func onAdd(viewController: UIViewController)
+}
+
 class IdentifyViewController: UIViewController {
 
     let viewModel: IdentifyViewModel
     let theme: Theme
     let viewControllerFactory: ViewControllerFactoring
+    
+    weak var delegate: IdentifyViewControllerDelegate?
 
     lazy var tableViewController: CallersTableViewController = {
         let controller = viewControllerFactory.makeCallerTableViewController()
@@ -68,7 +74,6 @@ fileprivate extension IdentifyViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        let controller = viewControllerFactory.makeAddCallerToIdentifyViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        delegate?.onAdd(viewController: self)
     }
 }

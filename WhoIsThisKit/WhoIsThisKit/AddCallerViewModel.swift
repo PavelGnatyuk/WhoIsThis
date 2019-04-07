@@ -30,16 +30,53 @@ extension AddCallerViewModelType {
 struct AddCallerViewModel {
     let type: AddCallerViewModelType
     var title: String = ""
-    var phone: String = ""
-    var name: String = ""
-    var note: String = ""
     
+    var name: String {
+        get {
+            return updated.name.isEmpty ? caller.name : updated.name
+        }
+        set {
+            updated.name = newValue
+        }
+    }
+
+    var phone: String {
+        get {
+            return updated.phone.isEmpty ? caller.phone : updated.phone
+        }
+        set {
+            updated.phone = newValue
+        }
+    }
+
+    var note: String {
+        get {
+            return updated.note.isEmpty ? caller.note : updated.note
+        }
+        set {
+            updated.note = newValue
+        }
+    }
+
+    var hasModified: Bool {
+        return !updated.name.isEmpty || !updated.phone.isEmpty || !updated.note.isEmpty
+    }
+    
+    private var caller = CallerData()
+    private var updated = CallerData()
+
     init(type: AddCallerViewModelType) {
         self.type = type
     }
 }
 
-extension String {
+fileprivate struct CallerData {
+    var phone: String = ""
+    var name: String = ""
+    var note: String = ""
+}
+
+fileprivate extension String {
     static let addCallerToBlockViewControllerTitle = "Block caller"
     static let addCallerToIdentifyViewControllerTitle = "Identify caller"
 }

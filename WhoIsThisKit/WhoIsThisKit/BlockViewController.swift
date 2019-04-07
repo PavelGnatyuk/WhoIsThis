@@ -9,11 +9,16 @@
 import UIKit
 import TheTheme
 
+protocol BlockViewControllerDelegate: class {
+    func onAdd(viewController: UIViewController)
+}
+
 class BlockViewController: UIViewController {
 
     let viewModel: BlockViewModel
     let theme: Theme
     let viewControllerFactory: ViewControllerFactoring
+    weak public var delegate: BlockViewControllerDelegate?
     
     lazy var blockView: BlockView = {
         let view = BlockView()
@@ -72,7 +77,6 @@ fileprivate extension BlockViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        let controller = viewControllerFactory.makeAddCallerToBlockViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        delegate?.onAdd(viewController: self)
     }
 }

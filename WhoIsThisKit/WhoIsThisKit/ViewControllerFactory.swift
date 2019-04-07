@@ -11,7 +11,10 @@ import TheTheme
 
 struct ViewControllerFactory: ViewControllerFactoring {
     
+    typealias FlowCoordinator = AddCallerViewControllerDelegate & IdentifyViewControllerDelegate & BlockViewControllerDelegate
+    
     let theme: Theme
+    weak public var coordinator: FlowCoordinator?
     
     init(theme: Theme) {
         self.theme = theme
@@ -54,6 +57,7 @@ struct ViewControllerFactory: ViewControllerFactoring {
     
     func makeIdentifyNavController() -> UINavigationController {
         let controller = makeIdentifyViewController()
+        controller.delegate = coordinator
         let navController = makeNavController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: .tabBarItemIdentify, image: nil, selectedImage: nil)
         return navController
@@ -61,6 +65,7 @@ struct ViewControllerFactory: ViewControllerFactoring {
 
     func makeBlockNavController() -> UINavigationController {
         let controller = makeBlockViewController()
+        controller.delegate = coordinator
         let navController = makeNavController(rootViewController: controller)
         navController.tabBarItem = UITabBarItem(title: .tabBarItemBlock, image: nil, selectedImage: nil)
         return navController
