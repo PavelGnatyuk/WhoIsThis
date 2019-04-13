@@ -7,9 +7,20 @@
 //
 
 import Foundation
+import WhoIsThisDB
 
 struct IdentifyViewModel {
     var title: String = .identifyViewControllerTitle
+    
+    var collection: CallerCollection
+    
+    init(callers: CallerCollection) {
+        self.collection = callers
+    }
+    
+    mutating func add(caller: Caller) {
+        collection.add(caller: caller)
+    }
 }
 
 fileprivate extension String {

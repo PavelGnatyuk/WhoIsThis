@@ -10,7 +10,7 @@ import UIKit
 import TheTheme
 
 protocol IdentifyViewControllerDelegate: class {
-    func onAdd(viewController: UIViewController)
+    func onAdd(viewController: UIViewController, viewModel: IdentifyViewModel)
 }
 
 class IdentifyViewController: UIViewController {
@@ -74,6 +74,6 @@ fileprivate extension IdentifyViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        delegate?.onAdd(viewController: self)
+        delegate?.onAdd(viewController: self, viewModel: viewModel)
     }
 }

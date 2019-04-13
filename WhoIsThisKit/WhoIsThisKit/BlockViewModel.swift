@@ -12,10 +12,14 @@ import WhoIsThisDB
 struct BlockViewModel {
     var title: String = .blockViewControllerTitle
     
-    let collection: CallerCollection
+    var collection: CallerCollection
     
     init(callers: CallerCollection) {
         self.collection = callers
+    }
+    
+    mutating func add(caller: Caller) {
+        collection.add(caller: caller)
     }
 }
 

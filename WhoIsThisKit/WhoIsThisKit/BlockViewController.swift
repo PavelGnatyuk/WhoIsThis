@@ -10,7 +10,7 @@ import UIKit
 import TheTheme
 
 protocol BlockViewControllerDelegate: class {
-    func onAdd(viewController: UIViewController)
+    func onAdd(viewController: UIViewController, viewModel: BlockViewModel)
 }
 
 class BlockViewController: UIViewController {
@@ -77,6 +77,6 @@ fileprivate extension BlockViewController {
     }
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
-        delegate?.onAdd(viewController: self)
+        delegate?.onAdd(viewController: self, viewModel: viewModel)
     }
 }

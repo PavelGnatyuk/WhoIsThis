@@ -9,6 +9,11 @@
 import Foundation
 
 public struct CallerCollection {
+    
+    enum Constants {
+        static let callerAttributeName = "caller"
+    }
+    
     private var collection = [Caller]()
     
     public var count: Int {
@@ -30,5 +35,16 @@ public struct CallerCollection {
     
     public mutating func add(caller: Caller) {
         collection.append(caller)
+        post(added: caller)
     }
+}
+
+fileprivate extension CallerCollection {
+    func post(added caller: Caller) {
+        NotificationCenter.default.post(name: .didAddCaller, object: self, userInfo: [Constants.callerAttributeName : caller] )
+    }
+}
+
+extension Notification.Name {
+    static let didAddCaller = Notification.Name("com.WhoIsThisDB.didAddCaller")
 }

@@ -10,20 +10,25 @@ import UIKit
 import TheTheme
 
 protocol AddCallerViewControllerDelegate: class {
-    func onClose(viewController: UIViewController, modified: Bool)
+    func onClose(viewController: UIViewController, viewModel: CallerViewModel)
 }
 
 class AddCallerViewController: UIViewController {
 
     let theme: Theme
-    private var viewModel: AddCallerViewModel
+    private var viewModel: CallerViewModel
     weak var delegate: AddCallerViewControllerDelegate?
 
     lazy var addCallerView: AddCallerView = {
         let view = AddCallerView()
         view.backgroundColor = theme.main.backgroundColor
+
         view.textFieldName.text = viewModel.name
+        view.textFieldName.keyboardType = .namePhonePad
+        
         view.textFieldPhone.text = viewModel.phone
+        view.textFieldPhone.keyboardType = .namePhonePad
+
         view.textViewNote.text = viewModel.note
         
         // To make Done button switch between the textfields
@@ -37,7 +42,7 @@ class AddCallerViewController: UIViewController {
         return view
     }()
     
-    init(viewModel: AddCallerViewModel, theme: Theme) {
+    init(viewModel: CallerViewModel, theme: Theme) {
         self.viewModel = viewModel
         self.theme = theme
         super.init(nibName: nil, bundle: nil)
@@ -75,7 +80,7 @@ fileprivate extension AddCallerViewController {
         if modified {
             save()
         }
-        delegate?.onClose(viewController: self, modified: modified)
+        delegate?.onClose(viewController: self, viewModel: viewModel)
     }
     
     func enableSave() {
@@ -146,8 +151,17 @@ fileprivate extension AddCallerViewController {
         }
     }
     
+    func updateNoteFrom(textView: UITextView) {
+        guard let text = textView.text else {
+            debugPrint("No text in the Note textview found")
+            return
+        }
+        viewModel.note = text
+    }
+    
     func save() {
         debugPrint("\(#function)")
+        updateNoteFrom(textView: addCallerView.textViewNote)
     }
     
 }

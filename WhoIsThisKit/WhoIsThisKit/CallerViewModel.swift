@@ -8,27 +8,14 @@
 
 import Foundation
 
-enum AddCallerViewModelType {
-    case blockCaller
-    case identifyCaller
-}
-
-extension AddCallerViewModelType {
-    static func make(type: AddCallerViewModelType) -> AddCallerViewModel {
-        var viewModel = AddCallerViewModel(type: type)
-        switch type {
-        case blockCaller:
-            viewModel.title = .addCallerToBlockViewControllerTitle
-
-        default:
-            viewModel.title = .addCallerToIdentifyViewControllerTitle
-        }
-        return viewModel
+struct CallerViewModel {
+    
+    enum ModelType {
+        case blockCaller
+        case identifyCaller
     }
-}
 
-struct AddCallerViewModel {
-    let type: AddCallerViewModelType
+    let type: ModelType
     var title: String = ""
     
     var name: String {
@@ -65,8 +52,24 @@ struct AddCallerViewModel {
     private var caller = CallerData()
     private var updated = CallerData()
 
-    init(type: AddCallerViewModelType) {
+    init(type: ModelType) {
         self.type = type
+    }
+}
+
+extension CallerViewModel {
+    enum Factory {
+        static func make(type: ModelType) -> CallerViewModel {
+            var viewModel = CallerViewModel(type: type)
+            switch type {
+            case .blockCaller:
+                viewModel.title = .addCallerToBlockViewControllerTitle
+                
+            default:
+                viewModel.title = .addCallerToIdentifyViewControllerTitle
+            }
+            return viewModel
+        }
     }
 }
 

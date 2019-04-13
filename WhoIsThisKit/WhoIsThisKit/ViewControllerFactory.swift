@@ -8,16 +8,21 @@
 
 import UIKit
 import TheTheme
+import WhoIsThisDB
 
 struct ViewControllerFactory: ViewControllerFactoring {
-    
     typealias FlowCoordinator = AddCallerViewControllerDelegate & IdentifyViewControllerDelegate & BlockViewControllerDelegate
     
     let theme: Theme
     weak public var coordinator: FlowCoordinator?
     
-    init(theme: Theme) {
+    let blockedCallers: CallerCollection
+    let identifiedCallers: CallerCollection
+    
+    init(theme: Theme, blocked: CallerCollection, identified: CallerCollection) {
         self.theme = theme
+        self.blockedCallers = blocked
+        self.identifiedCallers = identified
     }
     
     func makeTabBarController() -> UITabBarController {
@@ -36,14 +41,13 @@ struct ViewControllerFactory: ViewControllerFactoring {
     }
     
     func makeIdentifyViewController() -> IdentifyViewController {
-        let viewModel = IdentifyViewModel()
+        let viewModel = IdentifyViewModel(callers: identifiedCallers)
         let controller = IdentifyViewController(theme: theme, viewModel: viewModel, viewControllerFactory: self)
         return controller
     }
     
     func makeBlockViewController() -> BlockViewController {
-        let callers = CallerLoader().load()
-        let viewModel = BlockViewModel(callers: callers)
+        let viewModel = BlockViewModel(callers: blockedCallers)
         let controller = BlockViewController(theme: theme, viewModel: viewModel, viewControllerFactory: self)
         return controller
     }
@@ -78,13 +82,13 @@ struct ViewControllerFactory: ViewControllerFactoring {
     }
     
     func makeAddCallerToBlockViewController() -> AddCallerViewController {
-        let viewModel = AddCallerViewModelType.make(type: .blockCaller)
+        let viewModel = CallerViewModel.Factory.make(type: .blockCaller)
         let controller = AddCallerViewController(viewModel: viewModel, theme: theme)
         return controller
     }
     
     func makeAddCallerToIdentifyViewController() -> AddCallerViewController {
-        let viewModel = AddCallerViewModelType.make(type: .identifyCaller)
+        let viewModel = CallerViewModel.Factory.make(type: .identifyCaller)
         let controller = AddCallerViewController(viewModel: viewModel, theme: theme)
         return controller
     }

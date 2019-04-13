@@ -10,10 +10,13 @@ import Foundation
 
 public struct Caller {
     public var identifier: UUID = UUID()
-    public var name: String = ""
-    public var phone: String = ""
-    public var note: String = ""
+    public var name: String
+    public var phone: String
+    public var note: String
     
-    public init() {
+    public init(name: String = "", phone: String = "", note: String = "") {
+        self.name = name
+        self.phone = phone
+        self.note = note
     }
 }
