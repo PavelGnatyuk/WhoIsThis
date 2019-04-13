@@ -20,6 +20,8 @@ class BlockViewController: UIViewController {
     let viewControllerFactory: ViewControllerFactoring
     weak public var delegate: BlockViewControllerDelegate?
     
+    private var shouldReload = false
+    
     lazy var blockView: BlockView = {
         let view = BlockView()
         view.backgroundColor = theme.main.backgroundColor
@@ -58,16 +60,24 @@ class BlockViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        debugPrint("BlockViewController \(#function)")
         super.viewDidLoad()
+        viewModel.onAdded = onCallerAdded
         addBarButton()
         add(child: tableViewController)
         NSLayoutConstraint.activate(tableViewConstraints)
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        debugPrint("BlockViewController \(#function)")
         super.viewWillAppear(animated)
         title = viewModel.title
-    }
+        
+        if shouldReload {
+            tableViewController.tableView.reloadData()
+            shouldReload = false
+        }
+    }    
 }
 
 fileprivate extension BlockViewController {
@@ -78,5 +88,12 @@ fileprivate extension BlockViewController {
     
     @objc func tapOnAddButton(_ sender: AnyObject) {
         delegate?.onAdd(viewController: self, viewModel: viewModel)
+    }
+}
+
+fileprivate extension BlockViewController {
+    func onCallerAdded() {
+        debugPrint("BlockViewController \(#function)")
+        shouldReload = true
     }
 }

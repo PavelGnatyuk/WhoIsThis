@@ -46,5 +46,5 @@ fileprivate extension CallerCollection {
 }
 
 extension Notification.Name {
-    static let didAddCaller = Notification.Name("com.WhoIsThisDB.didAddCaller")
+    static public let didAddCaller = Notification.Name("com.WhoIsThisDB.didAddCaller")
 }

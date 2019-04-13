@@ -9,17 +9,36 @@
 import Foundation
 import WhoIsThisDB
 
-struct BlockViewModel {
+class BlockViewModel {
     var title: String = .blockViewControllerTitle
     
     var collection: CallerCollection
     
+    var onAdded: () -> () = {}
+    
     init(callers: CallerCollection) {
         self.collection = callers
+        bind()
     }
     
-    mutating func add(caller: Caller) {
-        collection.add(caller: caller)
+    deinit {
+        debugPrint("BlockViewModel \(#function)")
+        unbind()
+    }
+}
+
+fileprivate extension BlockViewModel {
+    func bind() {
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidAddCaller(notification:)), name: .didAddCaller, object: nil)
+    }
+    
+    func unbind() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func onDidAddCaller(notification: Notification) {
+        debugPrint("\(#function)")
+        onAdded()
     }
 }
 
