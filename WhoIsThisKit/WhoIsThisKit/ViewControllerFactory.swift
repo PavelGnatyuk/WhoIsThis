@@ -75,8 +75,8 @@ struct ViewControllerFactory: ViewControllerFactoring {
         return navController
     }
 
-    func makeCallerTableViewController() -> CallersTableViewController {
-        let dataSource = CallerTableViewDataSource()
+    func makeCallerTableViewController(collection: CallerCollection) -> CallersTableViewController {
+        let dataSource = CallerTableViewDataSource(collection: collection)
         let controller = CallersTableViewController(theme: theme, dataSource: dataSource)
         return controller
     }

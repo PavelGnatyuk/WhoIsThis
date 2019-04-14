@@ -9,9 +9,9 @@
 import Foundation
 import WhoIsThisDB
 
-struct CallerLoader: CallerLoading {
+class CallerLoader: CallerLoading {
     func load() -> CallerCollection {
-        var collection = CallerCollection()
+        let collection = CallerCollection()
         var cnt = 0
         while cnt < 5 {
             cnt += 1

@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import WhoIsThisDB
 
 class CallerTableViewDataSource: NSObject, UITableViewDataSource {
+    
+    let collection: CallerCollection
+    
+    init(collection: CallerCollection) {
+        self.collection = collection
+        super.init()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        debugPrint("Collection: \(collection). Count: \(collection.count)")
+        return collection.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let item = collection[indexPath.row]
+        
         let cell = UITableViewCell(style: .default, reuseIdentifier: CallerTableViewCell.reuseIdentifier)
         cell.backgroundColor = .clear
-        cell.textLabel?.text = "Caller"
+        cell.textLabel?.text = item.name
         return cell
     }
     

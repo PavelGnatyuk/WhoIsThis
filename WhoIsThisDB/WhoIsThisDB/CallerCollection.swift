@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CallerCollection {
+public class CallerCollection: Collection {
     
     enum Constants {
         static let callerAttributeName = "caller"
@@ -33,10 +33,23 @@ public struct CallerCollection {
         }
     }
     
-    public mutating func add(caller: Caller) {
+    public func add(caller: Caller) {
         collection.append(caller)
         post(added: caller)
     }
+
+    public func index(after i: Int) -> Int {
+        return collection.index(after: i)
+    }
+    
+    public var startIndex: Int {
+        return collection.startIndex
+    }
+    
+    public var endIndex: Int {
+        return collection.endIndex
+    }
+    
 }
 
 fileprivate extension CallerCollection {

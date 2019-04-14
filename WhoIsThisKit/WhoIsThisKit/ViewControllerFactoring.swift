@@ -8,6 +8,7 @@
 
 import UIKit.UIViewController
 import TheTheme
+import WhoIsThisDB
 
 protocol ViewControllerFactoring {
 
@@ -23,7 +24,7 @@ protocol ViewControllerFactoring {
     func makeIdentifyNavController() -> UINavigationController
     func makeBlockNavController() -> UINavigationController
     
-    func makeCallerTableViewController() -> CallersTableViewController
+    func makeCallerTableViewController(collection: CallerCollection) -> CallersTableViewController
     func makeAddCallerToBlockViewController() -> AddCallerViewController
     func makeAddCallerToIdentifyViewController() -> AddCallerViewController
 }

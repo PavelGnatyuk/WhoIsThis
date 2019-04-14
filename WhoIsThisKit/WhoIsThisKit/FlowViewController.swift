@@ -71,7 +71,7 @@ extension FlowViewController: IdentifyViewControllerDelegate, BlockViewControlle
     }
 
     func onAdd(viewController: UIViewController, viewModel: BlockViewModel) {
-        let controller = viewControllerFactory.makeAddCallerToIdentifyViewController()
+        let controller = viewControllerFactory.makeAddCallerToBlockViewController()
         controller.delegate = self
         viewController.navigationController?.pushViewController(controller, animated: true)
     }
@@ -81,7 +81,7 @@ extension FlowViewController: IdentifyViewControllerDelegate, BlockViewControlle
 extension FlowViewController: AddCallerViewControllerDelegate {
     func onClose(viewController: UIViewController, viewModel: CallerViewModel) {
         add(from: viewModel)
-        viewController.navigationController?.popViewController(animated: true)
+        viewController.navigationController?.popViewController(animated: true)        
     }
 }
 

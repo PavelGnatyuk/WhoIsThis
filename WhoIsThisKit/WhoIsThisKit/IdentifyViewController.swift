@@ -22,7 +22,7 @@ class IdentifyViewController: UIViewController {
     weak var delegate: IdentifyViewControllerDelegate?
 
     lazy var tableViewController: CallersTableViewController = {
-        let controller = viewControllerFactory.makeCallerTableViewController()
+        let controller = viewControllerFactory.makeCallerTableViewController(collection: viewModel.collection)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         return controller
     }()
